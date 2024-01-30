@@ -7,6 +7,7 @@ import {
     Avatar,
     User,
     DropdownSection,
+    Badge,
 } from "@nextui-org/react";
 import Image from "next/image";
 import menuVector from "@/public/menu-vector.svg";
@@ -24,20 +25,22 @@ export default function MenuDropdown() {
                 />
             </DropdownTrigger>
             <DropdownMenu aria-label="Link Actions">
-                <DropdownItem key={"Profile"} href="/profile">
-                    <User
-                        name="James Elton"
-                        description="@jameselton"
-                        avatarProps={{
-                            src: "https://i.pravatar.cc/100?img=3",
-                        }}
-                    />
+                <DropdownItem key={"Profile"}>
+                    <Link href={"/profile"}>
+                        <User
+                            name="James Elton"
+                            description="@jameselton"
+                            avatarProps={{
+                                src: "https://i.pravatar.cc/100?img=3",
+                            }}
+                        />
+                    </Link>
                 </DropdownItem>
-                <DropdownItem key={"Notifications"} href="/notifications">
-                    Notifications
+                <DropdownItem key={"Notifications"}>
+                    <Link href={"/notifications"}>Notifications</Link>
                 </DropdownItem>
-                <DropdownItem key="Settings" href="/settings">
-                    Settings
+                <DropdownItem key="Settings">
+                    <Link href={"/settings"}>Settings</Link>
                 </DropdownItem>
                 <DropdownItem key="Logout">Logout</DropdownItem>
             </DropdownMenu>
